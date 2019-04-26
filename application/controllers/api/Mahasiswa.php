@@ -11,6 +11,10 @@ class Mahasiswa extends REST_Controller{
     public function __construct(){
         parent::__construct();
         $this->load->model('Mahasiswa_model', 'mahasiswa');
+
+        $this->methods['index_get']['limit'] = 2; //PER HOUR
+        $this->methods['index_delete']['limit'] = 5; //PER HOUR
+        $this->methods['index_post']['limit'] = 10; //PER HOUR
     }
 
     public function index_get(){
